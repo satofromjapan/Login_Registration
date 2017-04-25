@@ -8,7 +8,7 @@ def index(request):
     return render(request, 'login/index.html')
 
 def success(request):
-    current_user = User.objects.get(id=request.session['id'])
+    current_user = User.objects.get(first_name=request.session['first_name'])
     context = {
     "current_user": current_user,
     }
